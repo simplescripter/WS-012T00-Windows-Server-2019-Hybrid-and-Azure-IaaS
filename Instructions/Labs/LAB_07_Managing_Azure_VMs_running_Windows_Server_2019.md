@@ -1,7 +1,7 @@
 ﻿---
 lab:
     title: 'Lab: Managing Azure VMs running Windows Server 2019'
-    module: 'Module 7: Managing and maintaining Azure VMs'
+    module: 'Module 7: Managing and maintaining Azure VMs' 
 ---
 
 # Lab: Managing Azure VMs running Windows Server 2019
