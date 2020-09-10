@@ -3,6 +3,7 @@ lab:
     title: 'Lab: Managing Azure VMs running Windows Server 2019'
     type: 'Answer Key'
     module: 'Module 7: Managing and maintaining Azure VMs'
+    order: 13
 ---
 
 # Lab answer key: Managing Azure VMs running Windows Server 2019

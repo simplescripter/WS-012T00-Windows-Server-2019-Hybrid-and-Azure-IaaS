@@ -3,6 +3,7 @@ lab:
     title: 'Lab: Deploying and configuring Windows Server 2019 on Azure VMs'
     type: 'Answer Key'
     module: 'Module 6: Deploying and Configuring Azure VMs'
+    order: 12
 ---
 
 # Lab answer key: Deploying and configuring Windows Server 2019 on Azure VMs

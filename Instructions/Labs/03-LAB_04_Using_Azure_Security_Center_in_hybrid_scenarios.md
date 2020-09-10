@@ -2,6 +2,7 @@
 lab:
     title: 'Lab: Using Azure Security Center in hybrid scenarios'
     module: 'Module 4: Implementing Security Solutions in Hybrid Scenarios'
+    order: 3
 ---
 
 # Lab: Using Azure Security Center in hybrid scenarios

@@ -3,6 +3,7 @@ lab:
     title: 'Lab: Implementing integration between AD DS and Azure AD'
     type: 'Answer Key'
     module: 'Module 2: Implementing Identity in Hybrid Scenarios'
+    order: 8
 ---
 
 # Lab: Implementing integration between AD DS and Azure AD

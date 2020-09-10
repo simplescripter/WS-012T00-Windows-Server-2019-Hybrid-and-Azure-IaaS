@@ -11,9 +11,10 @@ Hyperlinks to each of the lab exercises and demos are listed below.
 ## Labs
 
 {% assign labs = site.pages | where_exp:"page", "page.url contains '/Instructions/Labs'" %}
+{% assign sorted_labs = labs | sort:"order" %}
 | Module | Lab |
 | --- | --- |
-{% for activity in labs  %}
+{% for activity in sorted_labs  %}
 | {{ activity.lab.module }} | [{{ activity.lab.title }}{% if activity.lab.type %} - {{ activity.lab.type }}{% endif %}]({{ site.github.url }}{{ activity.url }}) |
 {% endfor %}
 

@@ -2,6 +2,7 @@
 lab:
     title: 'Lab: Using Windows Admin Center in hybrid scenarios'
     module: 'Module 3: Facilitating hybrid management and operational monitoring in hybrid scenarios'
+    order: 2
 ---
 
 # Lab: Using Windows Admin Center in hybrid scenarios
