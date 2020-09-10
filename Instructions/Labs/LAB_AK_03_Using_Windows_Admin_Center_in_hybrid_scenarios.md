@@ -3,7 +3,6 @@ lab:
     title: 'Lab: Using Windows Admin Center in hybrid scenarios'
     type: 'Answer Key'
     module: 'Module 3: Facilitating hybrid management and operational monitoring in hybrid scenarios'
-    order: 9
 ---
 
 # Lab answer key: Using Windows Admin Center in hybrid scenarios

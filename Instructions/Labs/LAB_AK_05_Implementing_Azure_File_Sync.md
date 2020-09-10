@@ -3,7 +3,6 @@ lab:
     title: 'Lab: Implementing Azure File Sync'
     type: 'Answer Key'
     module: 'Module 5: Implementing File Services in Hybrid Scenarios'
-    order: 11
 ---
 
 # Lab: Implementing Azure File Sync

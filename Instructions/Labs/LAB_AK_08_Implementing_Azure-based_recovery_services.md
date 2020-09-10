@@ -3,7 +3,6 @@ lab:
     title: 'Lab: Implementing Azure-based recovery services'
     type: 'Answer Key'
     module: 'Module 8: Planning and implementing migration and recovery services in hybrid scenarios'
-    order: 14
 ---
 
 # Lab answer key: Implementing Azure-based recovery services

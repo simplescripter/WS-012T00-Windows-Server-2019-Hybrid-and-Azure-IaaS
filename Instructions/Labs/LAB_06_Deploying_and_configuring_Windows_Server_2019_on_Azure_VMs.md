@@ -2,7 +2,6 @@
 lab:
     title: 'Lab: Deploying and configuring Windows Server 2019 on Azure VMs'
     module: 'Module 6: Deploying and Configuring Azure VMs'
-    order: 5
 ---
 
 # Lab: Deploying and configuring Windows Server 2019 on Azure VMs

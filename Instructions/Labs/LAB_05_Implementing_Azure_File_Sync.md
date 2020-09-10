@@ -2,7 +2,6 @@
 lab:
     title: 'Lab: Implementing Azure File Sync'
     module: 'Module 5: Implementing File Services in Hybrid Scenarios'
-    order: 4
 ---
 
 # Lab: Implementing Azure File Sync

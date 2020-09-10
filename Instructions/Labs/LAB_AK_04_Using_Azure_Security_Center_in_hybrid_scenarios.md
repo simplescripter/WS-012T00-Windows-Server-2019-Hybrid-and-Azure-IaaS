@@ -1,60 +1,24 @@
 ---
 lab:
     title: 'Lab: Using Azure Security Center in hybrid scenarios'
+    type: 'Answer Key'
     module: 'Module 4: Implementing Security Solutions in Hybrid Scenarios'
-    order: 3
 ---
 
 # Lab: Using Azure Security Center in hybrid scenarios
 
-## Scenario
-
-To identify Microsoft Azure security-related integration features with which you can further enhance your on-premises security environment, you have decided to add servers in your proof-of-concept environment to Security Center.
-
-Your goal is to onboard on-premises servers that are running Windows Server 2019 into Security Center and then verify the hybrid capabilities of Security Center.
-
-## Objectives
-
-After completing this lab, you'll be able to:
-
-- Configure Security Center.
-- Onboard on-premises Windows Server 2019 computers into Security Center.
-- Verify the hybrid capabilities of Security Center.
-
-## Estimated time: 45 minutes
-
-## Lab setup
-
-Lab virtual machines: **SEA-CL1**, **SEA-DC1**, **SEA-SVR1**, and **SEA-SVR2**
-Username: **Administrator**
-Password: **Pa55w.rd**
-
-For this lab, you'll use the available virtual machine (VM) environment and an Azure subscription. Before you begin the lab, complete the following steps:
-
-1. Ensure that you have an Azure subscription and a user account with the Owner or Contributor role in that subscription.
-1. Start the VMs.
-
 ## Exercise 1: Provisioning Azure VMs running Windows Server 2019
-
-### Scenario
-
-You must test Security Center functionality in hybrid scenarios, including its benefits for Azure VMs that are running Windows Server 2019. To start, you'll provision Azure VMs that are running Windows Server 2019 by using an Azure Resource Manager template.
-
-The main tasks for this exercise are:
-
-1. Start Azure Cloud Shell.
-1. Create an Azure VM by using Resource Manager templates.
 
 ### Task 1: Start Azure Cloud Shell
 
 1. Sign in to **SEA-CL1** as **Contoso\\\\Administrator** with password **Pa55w.rd**.
 1. Open Microsoft Edge, and then browse to the [Azure portal](https://portal.azure.com).
 1. Sign in by using the credentials that you created for this course.
-1. In the Azure portal, select **Cloud Shell**.
+1. On the Azure portal, select **Cloud Shell**.
 1. Select **PowerShell**.
 1. When prompted, verify that your subscription is chosen, and then select **Create storage**.
 
-### Task 2: Create an Azure VM by using Resource Manager templates
+### Task 2: Create an Azure VM by using Azure Resource Manager templates
 
 **Upload the Resource Manager templates**
 
@@ -62,9 +26,8 @@ The main tasks for this exercise are:
 1. Browse to the **c:\\labfiles\\mod04** folder.
 1. Select the **M04-lab-rg_template.json** file, and then select **Open**.
 1. Repeat steps 1 through 3 for the following files:
-
-   - **M04-lab-rg_template.parameters.json**
-   - **M04-lab-sub_template.json**
+    - **M04-lab-rg_template.parameters.json**
+    - **M04-lab-sub_template.json**
 
 **Create a resource group**
 
@@ -74,7 +37,7 @@ The main tasks for this exercise are:
     New-AzSubscriptionDeployment -Location '<region>' -Name ws2019-m04deployment -TemplateFile ./M04-lab-sub_template.json -rgLocation '<region>' -rgName 'm04-rg'
     ```
 
-**Create a Windows Server VM**
+**Create a Windows Server virtual machine (VM)**
 
 1. In Cloud Shell, enter the following command:
 
@@ -89,19 +52,9 @@ The main tasks for this exercise are:
 
 ## Exercise 2: Configuring Azure Security Center
 
-### Scenario
-
-You'll make Security Center available and upgrade to the Standard pricing tier. You'll then review the features and capabilities that apply to Windows Server hybrid scenarios.
-
-The main tasks for this exercise are:
-
-1. Make Security Center available and upgrade to the Standard pricing tier.
-1. Turn on automatic provisioning of the Log Analytics agent.
-1. Review the features and capabilities that apply to hybrid scenarios.
-
 ### Task 1: Make Security Center available and upgrade to the Standard pricing tier
 
-1. Open Microsoft Edge, and then verify that you're signed in to the Azure portal.
+1. Switch to Microsoft Edge, and then verify that you're signed in to the Azure portal.
 1. In the search box, enter **Security Center**, and then select **Security Center** from the results.
 1. On the **Security Center** menu, select **Getting started**.
 1. On the **Upgrade** tab of the **Getting started** pane, for **Enable standard tier on 1 subscriptions**, select your subscription.
@@ -124,7 +77,8 @@ The main tasks for this exercise are:
 1. In the **RESOURCE SECURITY HYGIENE** section of Security Center, select **Compute & apps**.
 1. Review the **Recommendation** list.
 
-   > **Note:** that the **Failed Resources** box indicates the type of resource to which the recommendation applies and lists how many resources the recommendation applies to.
+   > **Note:** that the **Failed Resources** box indicates the type of resource to which the recommendation applies and lists how many resources file the recommendation.
+
 1. Select **VMs and Servers**, and then select the **ws2019-m04-vm0** VM.
 1. Note the details of the VM's security health.
 1. Close the **ws2019-m04-vm0** pane.
@@ -133,14 +87,6 @@ The main tasks for this exercise are:
 
 ## Exercise 3: Onboarding on-premises Windows Server 2019 into Azure Security Center
 
-### Scenario
-
-You'll onboard **SEA-SVR1** into Security Center to determine the Security Center features that you can use to enhance security for Windows Server 2019, which is running in your on-premises environment.
-
-The main task for this exercise is:
-
-- Download and install the Log Analytics agent.
-
 ### Task 1: Download and install the Log Analytics agent
 
 1. On **SEA-CL1**, switch to Microsoft Edge, and then verify that you're signed in to the Azure portal.
@@ -148,9 +94,7 @@ The main task for this exercise is:
 1. Select the listed Log Analytics workspace. There should only be one, and the name will start with "DefaultWorkspace".
 1. Select **Agents management**.
 1. Copy and save the **WORKSPACE ID** and the **PRIMARY KEY**.
-
-   > **Note:** You can save these values in Notepad or make a note of them.
-
+    > **Note:** You can save these values in Notepad or make a note of them.
 1. Select the **Download Windows Agent (64 bit)** link.
 1. In the download status bar, on the context menu for **MMASetup-AMD64.exe**, select **Show in folder**.
 1. Copy the file to **c:\\labfiles\\mod04**.
@@ -167,7 +111,7 @@ The main task for this exercise is:
 1. Under **Windows Server**, select **Add**.
 1. Under **Server name**, enter ```sea-svr1.contoso.com```, and then select **Add**.
 1. In **Windows Admin Center**, select **SEA-SVR1**, and then sign in as **Contoso\\\\Administrator** with password **Pa55w.rd**.
-1. Select **PowerShell**, and then enter password **Pa55w.rd**.
+1. Select **PowerShell**, and then enter the password **Pa55w.rd**.
 1. Enter the following commands:
 
     ```powershell
@@ -188,15 +132,6 @@ The main task for this exercise is:
 
 ## Exercise 4: Verifying the hybrid capabilities of Azure Security Center
 
-### Scenario
-
-With a mix of on-premises Azure VMs and servers that are running Windows Server 2019, you want to validate the Security Center capabilities that are available in both cases. You'll simulate a cyberattack on both resources and be vigilant for alerts in Security Center.
-
-The main tasks for this exercise are:
-
-1. Validate the Security Center capabilities for Azure VMs.
-1. Validate the Security Center capabilities for on-premises servers.
-
 ### Task 1: Validate the Security Center capabilities for Azure VMs
 
 1. Open Microsoft Edge, and then browse to the [Azure portal](https://portal.azure.com).
@@ -205,9 +140,11 @@ The main tasks for this exercise are:
 
 1. In the search box, enter **Virtual Machines**, and then select **Virtual Machines** from the results.
 
-1. Select the **ws2019-m04-vm0** VM, select **Connect**, select **RDP**, and then select **Download RDP File**.
+1. Select the **ws2019-m04-vm0** VM.
 
-1. In the download status bar, on the context menu for the **ws2019-mo4-vm0.rdp** file, select **Open**.
+1. Select **Connect**, select **RDP**, and then select **Download RDP File**.
+
+1. In the download status bar, select the context menu for the **ws2019-mo4-vm0.rdp** file, and then select **Open**.
 
 1. If prompted, select **Connect**.
 
@@ -236,7 +173,7 @@ The main tasks for this exercise are:
 
 1. Review the recommendations.
 
-### Task 2: Validate the Security Center capabilities for on-premises servers
+### Task 2: Validate the Security Center capabilities for on-premises VMs
 
 1. In Microsoft Edge, switch to the **Windows Admin Center** tab.
 1. Verify that you're signed in to **SEA-SVR1** as **Contoso\\\\Administrator**, and then select **PowerShell**.
@@ -259,16 +196,6 @@ The main tasks for this exercise are:
 
 ## Exercise 5: Deprovisioning the Azure environment
 
-### Scenario
-
-To minimize Azure-related charges, you'll deprovision the Azure resources that were provisioned throughout this lab.
-
-The main tasks for this exercise are:
-
-1. Start a PowerShell session in Cloud Shell.
-1. Identify and remove all Azure resources that were provisioned in the lab.
-1. Prepare for the next module.
-
 ### Task 1: Start a PowerShell session in Cloud Shell
 
 1. On **SEA-CL1**, in Microsoft Edge, switch to the Azure portal.
@@ -285,11 +212,3 @@ The main tasks for this exercise are:
 ### Task 3: Prepare for the next module
 
 - End the lab.
-
-## Results
-
-After completing this lab, you have:
-
-- Configured Security Center.
-- Onboarded on-premises servers that are running Windows Server 2019 into Security Center.
-- Verified the hybrid capabilities of Security Center.
