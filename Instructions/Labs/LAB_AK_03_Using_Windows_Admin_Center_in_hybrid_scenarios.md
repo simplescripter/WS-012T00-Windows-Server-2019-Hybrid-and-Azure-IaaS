@@ -80,7 +80,7 @@ lab:
 
 ### Task 2: Create an Azure Network Adapter
 
-1. In the Microsoft Edge tab, navigate back to the ```lon-srv2.contoso.com``` page and select **Networks** again.
+1. In the Microsoft Edge tab, navigate back to the ```sea-srv2.contoso.com``` page and select **Networks** again.
 1. On the Windows Admin Center page, in the **Networks** blade, select **+ Add Azure Network Adapter (Preview)**.
 1. On the Add Network Adapter Settings blade, specify the following settings and select **Create** (leave others with their default values)"
 
